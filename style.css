@@ -1,1 +1,54 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
 
+header {
+    background: #004d99; /* University Blue */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header p {
+    font-style: italic;
+}
+
+main {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #004d99;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+}
+
+/* Style for the list of students */
+#student-data {
+    list-style: none;
+    padding: 0;
+}
+
+#student-data li {
+    background: #eef;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-left: 5px solid #004d99;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+    color: #666;
+    font-size: 0.9em;
+}
