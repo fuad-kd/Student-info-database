@@ -1,28 +1,52 @@
-// 1. Initialize Supabase Client (Replace with your actual keys)
-const SUPABASE_URL = 'https://imawnnctiummsbmlrqzh.supabase.co'; // e.g., 'https://xyz.supabase.co'
+// =======================================================
+// ** ACTION REQUIRED: REPLACE PLACEHOLDERS BELOW **
+// =======================================================
+const SUPABASE_URL = 'https://imawnnctiummsbmlrqzh.supabase.co'; 
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImltYXdubmN0aXVtbXNibWxycXpoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjIyNjgzMDksImV4cCI6MjA3Nzg0NDMwOX0.x9vAoBStER_dh995KpNJ_CPGbY-wCqsj1A7WYpHLm-Q'; 
+// Find these in your Supabase Dashboard -> Settings -> API
+// =======================================================
 
+// 1. Initialize the Supabase Client
 const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-async function fetchStudents() {
-    // 2. Query the 'Student' table
-    let { data: students, error } = await supabase
-        .from('Student')
-        .select('*'); // Select all columns
+/**
+ * Fetches all student records from the live Supabase database and displays them.
+ */
+async function fetchAndDisplayStudents() {
+    // 1. Get the list element from the HTML
+    const studentList = document.getElementById('student-data');
+    studentList.innerHTML = ''; // Clear the "Loading..." message
 
+    // 2. Perform the database query
+    let { data: students, error } = await supabase
+        .from('Student') // Query the 'Student' table
+        .select('student_id, first_name, last_name, dept_id') // Select only the necessary columns
+        .order('student_id', { ascending: true }); // Sort by Student ID
+
+    // 3. Handle errors
     if (error) {
-        console.error('Error fetching students:', error);
+        console.error('Error fetching students:', error.message);
+        studentList.innerHTML = `<li style="color: red;">Error: Failed to connect to database. Check console for details.</li>`;
+        return;
+    }
+    
+    // 4. Handle success (If no students are returned)
+    if (!students || students.length === 0) {
+        studentList.innerHTML = '<li>No student records found in the database.</li>';
         return;
     }
 
-    // 3. Display the data on the webpage
-    const studentList = document.getElementById('student-data');
+    // 5. Populate the HTML list with fetched data
     students.forEach(student => {
         const listItem = document.createElement('li');
-        listItem.textContent = `${student.first_name} ${student.last_name} (${student.student_id})`;
+        listItem.textContent = `
+            ID: ${student.student_id} | 
+            Name: ${student.first_name} ${student.last_name} | 
+            Dept ID: ${student.dept_id}
+        `;
         studentList.appendChild(listItem);
     });
 }
 
-// Ensure the Supabase library is loaded in index.html, then call the function
-fetchStudents();
+// Run the function when the page loads
+fetchAndDisplayStudents();
