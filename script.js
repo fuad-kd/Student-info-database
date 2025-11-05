@@ -2,7 +2,7 @@
 // ** ACTION REQUIRED: REPLACE PLACEHOLDERS BELOW **
 // =======================================================
 const SUPABASE_URL = 'https://imawnnctiummsbmlrqzh.supabase.co'; 
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImltYXdubmN0aXVtbXNibWxycXpoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjIyNjgzMDksImV4cCI6MjA3Nzg0NDMwOX0.x9vAoBStER_dh995KpNJ_CPGbY-wCqsj1A7WYpHLm-Q'; 
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImltYXdubmN0aXVtbXNibWxycXpoIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2MjI2ODMwOSwiZXhwIjoyMDc3ODQ0MzA5fQ.syzcbJId4H0STs26vFDKrDUc0koPhVnNxXXzZIDrv-0'; 
 // Find these in your Supabase Dashboard -> Settings -> API
 // =======================================================
 
