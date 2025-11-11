@@ -7,7 +7,7 @@ const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBh
 // =======================================================
 
 // 1. Initialize the Supabase Client
-const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+const supabase = supabase.createClient(https://imawnnctiummsbmlrqzh.supabase.co, eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImltYXdubmN0aXVtbXNibWxycXpoIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2MjI2ODMwOSwiZXhwIjoyMDc3ODQ0MzA5fQ.syzcbJId4H0STs26vFDKrDUc0koPhVnNxXXzZIDrv-0');
 
 /**
  * Fetches all student records from the live Supabase database and displays them.
